@@ -67,13 +67,21 @@
     }
 
     /* Логотип / имя в навбаре */
-    .nav-logo {
-      font-family: 'Syne', sans-serif;
-      font-weight: 800;
-      font-size: 20px;
-      color: var(--text);
-      text-decoration: none;
-    }
+  .nav-logo {
+    position: relative; /* нужно для позиционирования рыбки */
+  }
+
+  .logo-fish {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 36px;
+    opacity: 0.15;        /* прозрачность — меняй от 0 до 1 */
+    filter: hue-rotate(240deg) saturate(2); /* делает рыбку фиолетовой */
+    pointer-events: none; /* чтобы не мешала кликать */
+    user-select: none;
+  }
 
     /* Ссылки в навбаре */
     .nav-links {
@@ -460,7 +468,10 @@
        НАВИГАЦИЯ
        ============================== -->
   <nav>
-    <a href="#" class="nav-logo">DM</a>
+    <a href="#" class="nav-logo">
+  <span class="logo-fish">🐟</span>
+  DM
+</a>
     <ul class="nav-links">
       <!-- Якорные ссылки — "#about" ведёт к id="about" на странице -->
       <li><a href="#about">About</a></li>
